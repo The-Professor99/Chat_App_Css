@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Charset and viewport meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <meta name="title" content="Chat App Illustration">
+    <meta name="description" content="A Chat App Illustration using CSS">
+    <meta name="keywords" content="frontendmentor, chat app illustration, chat interface, design, ui, frontend, css">
+    <meta name="author" content="Festus Ihechi">
+    <!-- <link rel="author" to be added later-->
+    <!-- add link rel="canonical later too" -->
+
+    <!-- Snippets on Facebook and Twitter -->
+    <!-- Add Twitter card and Facebook ogp here-->
+
+    <!-- Icon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+   
+    <!-- Title -->
+    <title>Chat App Illustration</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="normalize.css">
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="index.css">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/7ef73086d5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <main>
+        <article> <!-- Change to <dialog> if It'll be interactive -->
+            <div class="top-screen apply-gradient">
+                <img alt="My Avatar" src="images/avatar.jpg">
+                <h3>Samuel Green</h3>
+                <p>Available to Walk</p>
+            </div>
+        
+            <div class="gray-bg">
+                <p class="received-msg">That sounds great. I’d be happy with that.</p>
+            
+                <p class="received-msg">Could you send over some pictures of your dog, please?</p>
+                
+                <div class="dog-photos">
+                    <img alt="1st photo of my dog" src="images/dog-image-1.jpg">
+                    <img alt="2nd photo of my dog" src="images/dog-image-2.jpg">
+                    <img alt="3rd photo of my dog" src="images/dog-image-3.jpg">
+                </div>
+                <p class="sent-msg">Here are a few pictures. She’s a happy girl!</p>
+            
+                <p class="sent-msg">Can you make it?</p>
+            
+                <p class="received-msg">She looks so happy! The time we discussed works. How long shall I take her out for?</p>
+                <form>
+                <div class="apply-gradient">
+                    <input type="radio" name="subscription" value="$29" id="$29"> 
+                    <label for="$29">30 minute walk <span>$29</span> </label><br>
+                </div>
+                
+                <div class="apply-gradient">
+                    <input type="radio" name="subscription" value="$49" id="$49">
+                    <label for="$49">1 hour walk <span>$49</span></label> <br>
+                </div>
+
+                <div class="message-box">
+                    <input type="text" name="message" placeholder="Type a message...">
+                    <input style="font-family: FontAwesome" value="&#xf138;" type="submit">
+                </div>
+                </form>
+            </div>
+        </article>
+
+        <section>
+            <h3>Simple booking</h3>
+            
+            <div>
+                <p>
+                    Stay in touch with our dog walkers through the chat interface. This makes it easy to 
+                    discuss arrangements and make bookings. Once the walk has been completed you can rate 
+                    your walker and book again all through the chat.
+                </p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="https://github.com/upcomin/">The Professor</a>.
+        </div>
+    </footer>
+</body>
+</html>
