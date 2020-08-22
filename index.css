@@ -1,0 +1,602 @@
+/*1 - General tags */
+html {
+    box-sizing: border-box;
+    font-size: 16px; /* used absolute value so the user's \
+    browser settings won't scale my site in unanticipated ways */
+}
+*, 
+*::before, 
+*::after {
+    box-sizing: inherit;
+}
+html, 
+body {
+    height: 100%;
+    font-family: 'Rubik', sans-serif;
+}
+img {
+    max-width: 100%;
+}
+a {
+    cursor: pointer;
+}
+
+/*2 - Individual tags */
+
+/*2.1 - Major Backgrounds(minor backgrounds can be found in
+the "Layout, colors and Fonts" section.) */
+
+/* 2.1.1 - top of screen */
+.apply-gradient-left {
+    background: rgb(63,94,251, 0.8);
+    background: linear-gradient(90deg, rgba(108,88,217,1) 0%, 
+    rgba(129,85,201,1) 18%, rgba(162,81,175,1) 60%, 
+    rgba(182,79,160,1) 74%, rgba(209,76,140,1) 100%, 
+    rgba(252,70,107,1) 100%);
+}
+.top-screen::after {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+/* 2.1.2 - body of screen */
+.phone-emulator {
+    background-color: rgba(245, 243, 247, 1);
+}
+
+/* 2.1.3 - form buttons */
+.apply-gradient-right {
+    background: rgb(209,76,140);
+    background: linear-gradient(90deg, rgba(209,76,140,1) 0%, 
+    rgba(164,70,252,1) 59%, rgba(116,20,206,1) 94%);
+}
+
+/*2.2 - Layout, colors and Fonts */
+
+/* 2.2.1 Body's background */
+body {
+    background-color: rgba(225, 225, 232, 1);
+    position: relative;
+    overflow-x: hidden;
+}
+body::before {
+    content: "";
+    position: absolute;
+    left: -7.5rem;
+    background: rgb(63,94,251);
+    background: linear-gradient(to top, rgba(108,88,217,0.8) 0%, 
+    rgba(129,85,201,0.7) 18%, rgba(162,81,175,0.8) 60%, 
+    rgba(182,79,160,0.7) 74%, rgba(209,76,140,0.6) 100%, 
+    rgba(252,70,107,0.6) 100%);
+    border-radius: 0 0 200% 100%;
+    width: 19rem;
+    height: 33rem;
+}
+#entire-page {
+    position: absolute;
+    height: auto;
+    overflow-x: hidden;
+}
+#entire-page::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: -7.5rem;
+    z-index: -1;
+    background-color: rgba(204, 196, 196, 0.3);
+    border-radius: 60% 52% 0 0;
+    width: 19rem;
+    height: 25rem;
+}
+/* 2.2.2 - top of the screen */
+.phone-emulator {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 5rem;
+    border: 0.7rem solid rgba(255, 255, 255, 1);
+    width: 65%;
+    border-radius: 2rem;
+    box-shadow: 0.3rem 0.3rem 1rem 0.63rem rgba(200, 192, 192, 1); 
+}
+.top-screen {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    border-radius: 1.3rem 1.3rem 0.2rem 0.2rem;
+    padding: 2rem 0.5rem 0.7rem 0.7rem;
+    width: 100%;
+}
+.top-screen::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 19%;
+    border-radius: 0 0 0.75rem 0.75rem;
+    width: 60%;
+    height: 1.2rem;
+}
+#back-arrow i {
+    margin-top: 20%;
+    color: white;
+    font-size: 1.4rem;
+
+}
+#menu-button {
+    position: relative;
+    background-color: rgba(255, 255, 255, 1);
+    margin-left: auto;
+    margin-right: 0.4rem;
+    width: 0.2rem;
+    height: 0.2rem;
+}
+#menu-button::before {
+    content: "";
+    position: absolute;
+    background-color: inherit;
+    width: 100%;
+    height: 100%;
+    bottom: 140%;
+}
+#menu-button::after {
+    content: "";
+    position: absolute;
+    background-color: inherit;
+    width: 100%;
+    height: 100%;
+    top: 140%;
+}
+
+.top-screen img {
+    margin-left: 0.3rem;
+    border: 0.1rem solid rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    max-height: 1.5rem;
+}
+.my-status {
+    margin-left: 0.4rem;
+    line-height: 1rem;
+}
+.my-status h3 {
+    color: white;
+    font-weight: 600;
+    font-size: 0.7rem;
+}
+.my-status p {
+    color: rgba(216, 158, 255, 1);
+    font-size: 0.53rem;
+}
+
+/* 2.2.3 - Body of the phone screen */
+.gray-bg {
+    border-radius: 0 0 1rem 1rem;
+    padding-top: 0.5rem;
+}
+.received-msg, 
+.sent-msg {
+    margin-top: 0.5rem;
+    padding: 0.4rem;
+    font-size: 0.51rem;
+}
+.sent-items {
+    margin-left: auto;
+    margin-right: 0.4rem;
+}
+.received-msg {
+    background-color: rgba(232, 227, 227, 0.8);
+    color: rgba(146, 65, 200, 1);
+    margin-left: 0.4rem;
+    border-radius: 0.5rem 0.5rem 0.5rem 0;
+    padding-right: 1rem;
+    width: 65%;
+}
+.sent-msg {
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 0.5rem 0.5rem 0rem 0.5rem;
+    padding-left: 0.5rem;
+}
+.gray-bg p:nth-child(4) {
+    margin-top: 0.2rem;
+    width: 62%;
+}
+.gray-bg p:nth-child(5) {
+    margin-bottom: 1rem;
+    width: max-content;
+}
+.dog-photos {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+    width: 67%;
+}
+.dog-photos img {
+    margin-left: 0.3rem;
+    border-radius: 0.5rem;
+    max-width: 27%;
+}
+.apply-gradient-right {
+    display: flex;
+    margin: 0.4rem;
+    margin-top: 0.5rem;
+    border-radius: 0.5rem 0.5rem 0.5rem 0;
+    width: 80%;
+    height: 3rem;
+}
+.radio-container {
+    display: flex;
+    position: relative;
+    margin: auto;
+    width: 100%;
+    height: max-content;
+    color: rgba(255, 255, 255, 1);
+}
+.radio-container > * {
+    cursor: pointer;
+}
+/* Hide the browser's default radio button */
+.radio-container input {
+    position: absolute;
+    cursor: pointer;
+    margin-left: 0.8rem;
+    margin-top: 0.35rem;
+    z-index: 1;
+    opacity: 0;
+}
+
+/* Create a custom radio button */
+.checkmark {
+    background-color: rgba(209,76,140,1);
+    position: relative;
+    margin-left: 0.5rem;
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.radio-container:hover input ~ .checkmark {
+    background-color: rgba(164,70,252,0.3);
+}
+.radio-container input:checked ~ .checkmark {
+    background-color: rgba(164,70,252,1);
+}
+.checkmark:after {
+    background-color: rgba(164,70,252,0.3);
+    content: "";
+    position: absolute;
+    margin-top: 0.09rem;
+    margin-left: 0.07rem;
+    border-radius: 50%;
+    width: 90%;
+    height: 90%;
+}
+.radio-container input:checked ~ .checkmark:after {
+    background-color: rgba(209,76,140,1);
+    margin-top: 0.4rem;
+    margin-left: 0.4rem;
+    width: 50%;
+    height: 50%;
+    z-index: 1;
+}
+label {
+    margin-left: 0.3rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.6rem;
+    letter-spacing: -1px;
+}
+label, 
+.dollar-label {
+    height: max-content;
+    align-self: center;
+}
+span.dollar-label {
+    margin-left: auto;
+    margin-right: 0.5rem;
+    font-weight: 700;
+    font-size: large;
+}
+.message-box {
+    position: relative;
+    background-color: rgba(255, 255, 255, 1);
+    display: flex;
+    margin: auto;
+    margin-bottom: 0.5rem;
+    border-radius: 2rem;
+    padding: 0.3rem;
+    width: 95%;
+    height: 2rem;
+}
+input {
+    border: none;
+}
+input[type="text"] {
+    color: rgba(198, 202, 205, 1);
+    border-radius: 50%;
+    padding-left: 0.6rem;
+    width: 80%;
+    font-size: 0.7rem;
+}
+input[type="text"]:focus {
+    color: rgba(0, 0, 0, 1);
+}
+input[type="submit"] {
+    background-color: rgba(255, 255, 255, 1);
+    color: rgba(62, 39, 83, 1);
+    margin-left: auto;
+    padding: 0;
+    font-size: 1.3rem;
+}
+
+/* 2.2.4 - Outside phone screen */
+.brief-description {
+    margin: auto;
+    margin-top: 2rem;
+    width: 80%;
+    text-align: center;
+}
+.brief-description h3 {
+    color: hsl(271, 36%, 24%);
+    font-size: 2.4rem;
+    font-weight: 500;
+}
+.brief-description p {
+    color: hsl(270, 7%, 64%);
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+}
+/* 2.2.5 Footer */
+footer {
+    margin: auto;
+    margin-top: 6rem;
+    margin-bottom: 1rem;
+    width: 80%;
+    text-align: center;
+    font-size: 0.51rem;
+}
+
+/* 3 - Media Queries */
+@media all and (min-width: 480px) {
+    .phone-emulator {
+        box-shadow: 0.2rem 0.2rem 0.5rem blueviolet;
+    }
+    label {
+        font-size: 0.8rem;
+    }
+}
+@media all and (min-width: 768px) {
+    body::before {
+        border-radius: 0 0 50% 50%;
+        width: 33rem;
+        height: 35rem;
+    }
+    #entire-page::after {
+        width: 28rem;
+        height: 35rem;
+    }
+    main {
+        display: flex;
+    }
+    .phone-emulator {
+        margin-left: auto;
+        width: 17rem;
+    }
+    .brief-description {
+        margin: auto;
+        margin-left: -3rem;
+        width: 31%;
+        text-align: left;
+    }  
+}
+@media all and (min-width: 1024px) {
+    .phone-emulator {
+        box-shadow: 0.3rem 0.3rem 1rem 0.63rem rgba(200, 192, 192, 1); 
+    }
+}
+
+/* 4 - Animations */
+
+/* Added for animation purposes only */
+p.animate-me {
+    background-color: white;
+    width: calc(100% - 4rem); /* sets the originating-width \
+    for the p.animate-me::after pseudo-element */
+    top: 25%;
+    left: 5%;
+    font-size: 0.71rem;
+    visibility: hidden;
+    position: absolute;
+}
+
+/* 4.1 Animation settings */
+@keyframes text-flow {
+    from {visibility: hidden;}
+    to {visibility: hidden;}
+}
+@keyframes placeholder {
+    0% {visibility: visible;}
+    0.1% {visibility: hidden;}
+    46% {visibility: hidden;}
+    51% {visibility: visible;}
+    53% {visibility: hidden;}
+    79% {visibility: hidden;}
+    80% {visibility: visible;}
+    100% {visibility: hidden;}
+}
+@keyframes type-text {
+    0.3% {content:"H"; }
+    1.36% {content:"He"; }
+    2.72% {content:"Her"; }
+    4.08% {content:"Here"; }
+    5.44% {content:"Here "; }
+    6.8% {content:"Here a"; }
+    8.16% {content:"Here ar"; }
+    9.52% {content:"Here are"; }
+    10.88% {content:"Here are "; }
+    12.24% {content:"Here are a"; }
+    13.6% {content:"Here are a "; }
+    14.96% {content:"Here are a f"; }
+    16.32% {content:"Here are a fe"; }
+    17.68% {content:"Here are a few"; }
+    19.04% {content:"Here are a few "; }
+    20.4% {content:"Here are a few p"; }
+    21.76% {content:"Here are a few pi"; }
+    23.12% {content:"Here are a few pic"; }
+    24.48% {content:"Here are a few pict"; }
+    25.84% {content:"Here are a few pictu"; }
+    27.2% {content:"Here are a few pictur"; }
+    28.56% {content:"Here are a few picture"; }
+    29.92% {content:"Here are a few pictures"; }
+    31.28% {content:"Here are a few pictures."; }
+    32.64% {content:"Here are a few pictures. "; }
+    34.0% {content:"Here are a few pictures. S"; }
+    35.36% {content:"Here are a few pictures. Sh"; }
+    36.72% {content:"Here are a few pictures. She"; }
+    38.08% {content:"Here are a few pictures. She’"; }
+    39.44% {content:"Here are a few pictures. She’s"; }
+    40.8% {content:"Here are a few pictures. She’s "; }
+    42.16% {content:"Here are a few pictures. She’s a"; }
+    43.52% {content:"Here are a few pictures. She’s a "; }
+    44.88% {content:"Here are a few pictures. She’s a h"; }
+    46.24% {content:"Here are a few pictures. She’s a ha"; }
+    47.6% {content:"Here are a few pictures. She’s a hap"; }
+    48.96% {content:"Here are a few pictures. She’s a happ"; }
+    50.32% {content:"Here are a few pictures. She’s a happy"; }
+    51.68% {content:"Here are a few pictures. She’s a happy "; }
+    53.04% {content:"Here are a few pictures. She’s a happy g"; }
+    54.4% {content:"Here are a few pictures. She’s a happy gi"; }
+    55.76% {content:"Here are a few pictures. She’s a happy gir"; }
+    57.12% {content:"Here are a few pictures. She’s a happy girl"; }
+    58.48% {content:"Here are a few pictures. She’s a happy girl!"; }
+    59% {visibility: hidden;}
+    79% {visibility: hidden;}
+    80% {content:"C"; }
+    81.33% {content:"Ca"; }
+    82.66% {content:"Can"; }
+    83.99% {content:"Can "; }
+    85.32% {content:"Can y"; }
+    86.65% {content:"Can yo"; }
+    87.98% {content:"Can you"; }
+    89.31% {content:"Can you "; }
+    90.64% {content:"Can you m"; }
+    91.97% {content:"Can you ma"; }
+    93.3% {content:"Can you mak"; }
+    94.63% {content:"Can you make"; }
+    95.96% {content:"Can you make "; }
+    96.29% {content:"Can you make i"; }
+    97.62% {content:"Can you make it"; }
+    98% {content:"Can you make it?"; } 
+    100% {content:"Can you make it?"; }
+}
+
+@keyframes type-message {
+    0% {content:"T"; visibility: visible}
+    7.69% {content:"Ty"; visibility: visible}
+    15.38% {content:"Typ"; visibility: visible}
+    23.07% {content:"Type"; visibility: visible}
+    30.76% {content:"Type "; visibility: visible}
+    36.21% {content:"Type a"; visibility: visible}
+    38.45% {content:"Type a "; visibility: visible}
+    46.14% {content:"Type a m"; visibility: visible}
+    48.76% {content:"Type a me"; visibility: visible}
+    53.83% {content:"Type a mes"; visibility: visible}
+    61.52% {content:"Type a mess"; visibility: visible}
+    69.21% {content:"Type a messa"; visibility: visible}
+    76.9% {content:"Type a messag"; visibility: visible}
+    80.3% {content:"Type a message"; visibility: visible}
+    84.59% {content:"Type a message."; visibility: visible}
+    92.28% {content:"Type a message.."; visibility: visible}
+    95.97% {content:"Type a message..."; visibility: visible}
+}
+
+/* 4.2 - Animations applied */
+.gray-bg p:nth-of-type(1) {
+    animation-name: text-flow;
+    animation-duration: 1s;
+}
+.gray-bg p:nth-of-type(2) {
+    animation-name: text-flow;
+    animation-duration: 2s;
+}
+.dog-photos img:nth-of-type(3) {
+    animation-name: text-flow;
+    animation-duration: 4s;
+}
+.dog-photos img:nth-of-type(2) {
+    animation-name: text-flow;
+    animation-duration: 5s;
+}
+.dog-photos img:nth-of-type(1) {
+    animation-name: text-flow;
+    animation-duration: 6s;
+}
+.gray-bg p:nth-of-type(3) {
+    animation-name: text-flow;
+    animation-duration: 10.2s;
+}
+.gray-bg p:nth-of-type(4) {
+    animation-name: text-flow;
+    animation-duration: 12.8s;
+}
+.gray-bg p:nth-of-type(5) {
+    animation-name: text-flow;
+    animation-duration: 14s;
+}
+.apply-gradient-right:nth-of-type(1) {
+    animation-name: text-flow;
+    animation-duration: 15s;
+}
+.apply-gradient-right:nth-of-type(2) {
+    animation-name: text-flow;
+    animation-duration: 16s;
+}
+
+/* 4.3 - Animations applied to media queries */
+@media screen and (min-width: 370px) {
+    .message-box::before {
+        content: "";
+        position: absolute;
+        left: 1rem;
+        top: 0.6rem;
+        width: calc(100% - 3.3rem);
+        height: auto;
+        font-size: 0.6rem;
+        animation-name: type-text;
+        animation-duration: 6s;
+        animation-timing-function: linear;
+        animation-delay: 6.5s;
+    }
+    input[type="text"] {
+        animation-name: placeholder;
+        animation-duration: 8s;
+        animation-delay: 6.4s;
+        animation-timing-function: linear;
+        animation-fill-mode: backwards;
+    }
+}
+@media all and (min-width: 480px) {
+    p.animate-me::after {
+        content: "";
+        position: absolute;
+        width: 90%;
+        animation-name: type-message;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        animation-delay: 18s;
+    }
+    p.animate-me:hover::after {
+        display: none;
+        z-index: -1;
+        animation-play-state: paused;
+    }
+    input[type="text"]:focus {
+        border-radius: 0%;
+        z-index: 1;
+        opacity: 1;
+        animation-fill-mode: none;
+    }
+}
+@media all and (max-width: 767px) and (min-width: 560px) {
+    input[type="text"] {
+        animation-fill-mode: forwards;
+    }
+}

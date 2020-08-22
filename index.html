@@ -5,92 +5,121 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Title -->
+    <title>Chat App Illustration</title>
+
     <!-- SEO -->
     <meta name="title" content="Chat App Illustration">
     <meta name="description" content="A Chat App Illustration using CSS">
     <meta name="keywords" content="frontendmentor, chat app illustration, chat interface, design, ui, frontend, css">
     <meta name="author" content="Festus Ihechi">
-    <!-- <link rel="author" to be added later-->
-    <!-- add link rel="canonical later too" -->
+    <link rel="author" href="https://github.com/Upcomin/">
+    <link rel="canonical" href="https://upcomin.github.io/Chat_App_Css/">
 
-    <!-- Snippets on Facebook and Twitter -->
-    <!-- Add Twitter card and Facebook ogp here-->
+    <!-- Facebook Snippets -->
+    <meta property="og:url" content="https://upcomin.github.io/Chat_App_Css">
+    <meta property="og:title" content="Chat App Illustration">
+    <meta property="og:description" content="A Chat App Illustration using CSS">
+    <meta property="og:image" content="https://upcomin.github.io/Chat_App_Css/images/og-image.jpg">
+    <!-- Add og:image with heights and widths -->
 
+    <!-- Twitter Cards -->
+    <meta name="twitter:url" content="https://upcomin.github.io/Chat_App_Css">
+    <meta name="twitter:title" content="Chat App Illustration">
+    <meta name="twitter:description" content="A Chat App Illustration using CSS">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://upcomin.github.io/Chat_App_Css/images/og-image.jpg">
+    <!-- continue adding things for the twitter cards later -->
+    
     <!-- Icon -->
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
    
-    <!-- Title -->
-    <title>Chat App Illustration</title>
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="normalize.css">
     <link rel="stylesheet" type="text/css" href="reset.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="index.css">
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/7ef73086d5.js" crossorigin="anonymous"></script>
+    
 </head>
 <body>
     
-    <main>
-        <article> <!-- Change to <dialog> if It'll be interactive -->
-            <div class="top-screen apply-gradient">
-                <img alt="My Avatar" src="images/avatar.jpg">
-                <h3>Samuel Green</h3>
-                <p>Available to Walk</p>
-            </div>
-        
-            <div class="gray-bg">
-                <p class="received-msg">That sounds great. I’d be happy with that.</p>
+    <div id="entire-page">
+        <main>
+            <article class="phone-emulator"> <!-- Change to <dialog> if It'll be interactive -->
+                <div class="top-screen apply-gradient-left">
+                    <div id="back-arrow"><i class="fas fa-chevron-left"></i></div>
+                    <img alt="My Avatar" src="images/avatar.jpg">
+                    <div class="my-status">
+                        <h3>Samuel Green</h3>
+                        <p>Available to Walk</p>
+                    </div>
+                    <div id="menu-button"></div>
+                </div>
             
-                <p class="received-msg">Could you send over some pictures of your dog, please?</p>
+                <div class="gray-bg">
+                    <p class="received-msg">That sounds great. I’d be happy with that.</p>
                 
-                <div class="dog-photos">
-                    <img alt="1st photo of my dog" src="images/dog-image-1.jpg">
-                    <img alt="2nd photo of my dog" src="images/dog-image-2.jpg">
-                    <img alt="3rd photo of my dog" src="images/dog-image-3.jpg">
-                </div>
-                <p class="sent-msg">Here are a few pictures. She’s a happy girl!</p>
-            
-                <p class="sent-msg">Can you make it?</p>
-            
-                <p class="received-msg">She looks so happy! The time we discussed works. How long shall I take her out for?</p>
-                <form>
-                <div class="apply-gradient">
-                    <input type="radio" name="subscription" value="$29" id="$29"> 
-                    <label for="$29">30 minute walk <span>$29</span> </label><br>
-                </div>
+                    <p class="received-msg">Could you send over some pictures of your dog, please?</p>
+                    
+                    <div class="dog-photos sent-items">
+                        <img alt="1st photo of my dog" src="images/dog-image-1.jpg">
+                        <img alt="2nd photo of my dog" src="images/dog-image-2.jpg">
+                        <img alt="3rd photo of my dog" src="images/dog-image-3.jpg">
+                    </div>
+                    <p class="sent-msg sent-items">Here are a few pictures. She’s a happy girl!</p>
                 
-                <div class="apply-gradient">
-                    <input type="radio" name="subscription" value="$49" id="$49">
-                    <label for="$49">1 hour walk <span>$49</span></label> <br>
-                </div>
+                    <p class="sent-msg sent-items">Can you make it?</p>
+                
+                    <p class="received-msg sent-items">She looks so happy! The time we discussed works. How long shall I take her out for?</p>
+                    <form>
+                    <div class="apply-gradient-right">
+                        <div class="radio-container">
+                            <input type="radio" name="subscription" value="$29" id="$29">
+                            <span class="checkmark"></span> 
+                            <label for="$29">30 minute walk </label><span class="dollar-label">$29</span><br>
+                        </div>
+                    </div>
+                    
+                    <div class="apply-gradient-right">
+                        <div class="radio-container">
+                            <input type="radio" name="subscription" value="$49" id="$49">
+                            <span class="checkmark"></span>
+                            <label for="$49">1 hour walk</label> <span class="dollar-label">$49</span><br>
+                        </div>
+                    </div>
 
-                <div class="message-box">
-                    <input type="text" name="message" placeholder="Type a message...">
-                    <input style="font-family: FontAwesome" value="&#xf138;" type="submit">
+                    <div class="message-box">
+                        <input type="text" name="message" placeholder="Type a message...">
+                        <p class="animate-me"></p>
+                        <input style="font-family: FontAwesome" value="&#xf138;" type="submit">
+                    </div>
+                    </form>
                 </div>
-                </form>
-            </div>
-        </article>
+            </article>
 
-        <section>
-            <h3>Simple booking</h3>
-            
-            <div>
-                <p>
-                    Stay in touch with our dog walkers through the chat interface. This makes it easy to 
-                    discuss arrangements and make bookings. Once the walk has been completed you can rate 
-                    your walker and book again all through the chat.
-                </p>
+            <section class="brief-description">
+                <h3>Simple booking</h3>
+                
+                <div>
+                    <p>
+                        Stay in touch with our dog walkers through the chat interface. This makes it easy to 
+                        discuss arrangements and make bookings. Once the walk has been completed you can rate 
+                        your walker and book again all through the chat.
+                    </p>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="attribution">
+            Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" title="Checkout this challenge and others too...">Frontend Mentor</a>. 
+            Coded by <a href="https://github.com/upcomin/" title="Visit my Github Repository" target="_blank">The Professor</a>.
             </div>
-        </section>
-    </main>
-    <footer>
-        <div class="attribution">
-        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-        Coded by <a href="https://github.com/upcomin/">The Professor</a>.
-        </div>
-    </footer>
+        </footer>
+        <a href="./images/og-image.jpg"></a>
+    </div>
 </body>
 </html>
